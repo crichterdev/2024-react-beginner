@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vs/slnx.sqlite
+.vs/2024-react-beginner/FileContentIndex/2add4f54-5b54-4a36-9b48-0243c9060be0.vsidx
+.vs/2024-react-beginner/FileContentIndex/6c248e4a-bdbe-46c4-ab57-441edaaaada9.vsidx
+.vs/2024-react-beginner/FileContentIndex/77335b99-1c7a-43c7-97bc-95bb3b5ffbaa.vsidx
+.vs/2024-react-beginner/FileContentIndex/read.lock
+.vs/2024-react-beginner/FileContentIndex/876a3f4e-35c6-4c98-b513-925016208f57.vsidx
