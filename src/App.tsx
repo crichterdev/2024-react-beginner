@@ -2,6 +2,11 @@ import TodoItem from "./components/TodoItem"
 import { dummyData as dummyData } from "./data/todos"
 
 function App() {
+  function setTodoCompleted(id: number, completed: boolean){
+    alert(`Todo with id ${ id } is now ${
+      completed ? "completed" : "not completed"}`);
+
+  }
 
 
   return (
@@ -9,11 +14,13 @@ function App() {
       <h1 className="font-bold text-3xl text-center">
         Your TODOs
       </h1>
-      <div className="max-w-lg mx-auto">
+      <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5">
         <div className="space-y-2">
           {dummyData.map(todo => (
-            // <p key={todo.id} className="text-lg">{todo.title}</p>
-            <TodoItem todo ={todo}/>
+            <TodoItem 
+            key={todo.id}
+            todo ={todo}
+            onCompletedChange={setTodoCompleted}/>
           ))
 
           }
