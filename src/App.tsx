@@ -3,6 +3,7 @@ import TodoItem from "./components/TodoItem"
 import { dummyData as dummyData } from "./data/todos"
 import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
+import TodoSummary from "./components/TodoSummary";
 
 function App() {
   const [todos, setTodos] = useState(dummyData)
@@ -16,7 +17,7 @@ function App() {
   function addTodo(title: string): void {
     setTodos(prevTodos => [
       {
-        id: prevTodos.length + 1,
+        id: Date.now(),
         title,
         completed: false
       },
@@ -27,6 +28,9 @@ function App() {
 
   function todoDelete(id: number): void {
     setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id))
+  }
+  function deleteAllCompletedTodos() {
+    setTodos(prevTodos => prevTodos.filter(todo => !todo.completed))
   }
 
   return (
@@ -42,6 +46,9 @@ function App() {
        onCompletedChange={setTodoCompleted}
        onDelete={todoDelete}/>
       </div>
+      <TodoSummary
+        todos = {todos}
+        deleteAllCompleted={deleteAllCompletedTodos}/>
     </main>
   )
 }

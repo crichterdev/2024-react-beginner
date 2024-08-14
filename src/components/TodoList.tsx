@@ -22,7 +22,7 @@ export default function TodoList({
     })
 
     return (
-        <>
+        <div>
             <div className="space-y-2">
                 {todosSorted.map(todo => (
                     <TodoItem
@@ -40,6 +40,6 @@ export default function TodoList({
                     No todos yet. Pls add one
                 </p>
             )}
-        </>
+        </div>
     )
 }
